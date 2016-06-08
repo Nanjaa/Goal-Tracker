@@ -1,0 +1,9 @@
+<div class="container">
+	<h1>hello world</h1>
+	<h2>this is where you add a task</h2>
+	<%= form_for :goal, url: goals_path do |f| %>
+		<%= f.label :name %><br>
+		<%= f.text_field :name %>
+		<%= f.submit %>
+	<% end %>
+</div>
