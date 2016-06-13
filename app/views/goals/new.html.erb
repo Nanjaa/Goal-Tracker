@@ -1,8 +1,5 @@
 <h1>New Goal</h1>
-<%= form_for :goal, url: goals_path do |f| %>
-	<p>
-		<%= f.label :title %><br>
-		<%= f.text_field :title %>
-		<%= f.submit %>
-	</p>
-<% end %>
+
+<%= render 'form' %>
+
+<%= link_to "Back", goals_path %>
