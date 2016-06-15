@@ -1,15 +1,21 @@
-<h1>Listing Goals</h1>
+<h1>Welcome Back, USER!</h1>
 <%= link_to 'New Goal', new_goal_path %>
-<table>
-	<tr>
-		<th>Goal:</th>
-	</tr>
+<% count = 0 %>
 
-	<%= @goals.each do |goal| %>
+<% @goals.each do |goal| %>
+	<table>
 		<tr>
-			<td><%= goal.title %></td>
+			<th>Today's Goals:</th>
+		</tr>
+	<% @goal = Goal.find goal.id %>
+	<% @goal.amounts.each do |amount| %>
+		<tr>
+			<td><%= amount.goal_amount %> <%= goal.title %></td>
 			<td><%= link_to 'Show', goal_path(goal) %></td>
 			<td><%= link_to 'Edit', edit_goal_path(goal) %></td>
+			<td><%= link_to 'Delete', goal_path(goal), method: :delete,
+				data: {	confirm: 'Are you sure?'} %></td>
 		</tr>
 	<% end %>
-</table>
+	</table>
+<% end %>

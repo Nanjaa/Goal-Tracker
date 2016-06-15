@@ -3,5 +3,22 @@
 	<%= @goal.title %>
 </p>
 
+<h2>Amounts</h2>
+<% @goal.amounts.each do |amount| %>
+	<p>
+		<strong>Amount:</strong>
+		<%= amount.goal_amount %>
+	</p>
+<% end %>
+
+<h2>Add goal amount</h2>
+<%= form_for([@goal, @goal.amounts.build]) do |f| %>
+	<p>
+		<%= f.label :goal_amount %><br>
+		<%= f.text_field :goal_amount %>
+		<%= f.submit %>
+	</p>
+<% end %>
+
 <%= link_to 'Edit', edit_goal_path(@goal) %> | 
 <%= link_to 'Back', goals_path %>
