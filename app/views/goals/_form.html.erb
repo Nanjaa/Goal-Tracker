@@ -13,9 +13,9 @@
 		</div>
 	<% end %>
 
-	<p>
-		<%= f.label :title %>
-		<%= f.text_field :title %>
+	<h3>I'm going to start doing </h3>
+	<%=f.text_field :goal_amount, placeholder: "20 minutes, 500, 1 hour" %>
+	<h3> of </h3>
+	<%= f.text_field :title, placeholder: "exercise, words, cleaning" %>
 		<%= f.submit %>
-	</p>
 <% end %>

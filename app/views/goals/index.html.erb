@@ -1,5 +1,5 @@
 <h1>Welcome Back, USER!</h1>
-<%= link_to 'New Goal', new_goal_path %>
+<%= link_to 'Would you like to add a new goal?', new_goal_path %>
 <% count = 0 %>
 
 <% @goals.each do |goal| %>
@@ -18,4 +18,10 @@
 		</tr>
 	<% end %>
 	</table>
+<% end %>
+
+<h2>Add a new goal</h2>
+<% form_for @goal do |f| %>
+	<%= f.text_field :title %>
+	<%= f.submit %>
 <% end %>
