@@ -1,2 +1,24 @@
-<h1>Hello, world!</h1>
-<%= link_to 'My Goals', controller: 'goals' %>
+<h1>Welcome Back, USER!</h1>
+<%= link_to 'Would you like to add a new goal?', new_goal_path %>
+<% count = 0 %>
+
+<h2>Add a new goal</h2>
+<%= render 'form' %>
+
+<% @goals.each do |goal| %>
+	<table>
+		<tr>
+			<th>Today's Goals:</th>
+		</tr>
+	<% @goal = Goal.find goal.id %>
+	<% @goal.amounts.each do |amount| %>
+		<tr>
+			<td><%= amount.goal_amount %> <%= goal.title %></td>
+			<td><%= link_to 'Show', goal_path(goal) %></td>
+			<td><%= link_to 'Edit', edit_goal_path(goal) %></td>
+			<td><%= link_to 'Delete', goal_path(goal), method: :delete,
+				data: {	confirm: 'Are you sure?'} %></td>
+		</tr>
+	<% end %>
+	</table>
+<% end %>

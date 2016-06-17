@@ -17,7 +17,6 @@ class GoalsController < ApplicationController
 
 	def create
 		@goal = Goal.new(goal_params)
-		@amount = @goal.amounts.create(amount_params)
 
 		if @goal.save
 			redirect_to @goal
@@ -47,7 +46,5 @@ class GoalsController < ApplicationController
 		def goal_params
 			params.require(:goal).permit(:title)
 		end
-		def amount_params
-			params.require(:amount).permit(:goal_amount)
-		end
+
 end
