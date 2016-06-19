@@ -1,3 +1,5 @@
 class Amount < ActiveRecord::Base
-  belongs_to :goal
+	validates :points, numericality: { only_integer: true }
+
+	belongs_to :goal
 end

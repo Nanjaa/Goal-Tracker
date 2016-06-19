@@ -1,12 +1,15 @@
 <h1>Creating New Goal...</h1>
-
 <%= form_for([@goal, @goal.amounts.build]) do |f| %>
+
 	<h2>Is this correct?</h2>
+	<%= @goal.amo
+
 	<%= f.text_field :goal_amount %>
 	<%= @goal.test %>
 	of
 	<%= @goal.title %><br>
 	<h2>How many points is this goal worth?</h2>
+	<%= f.text_field :points %>
 
 	<h2>Would you like to add other incriments for more points?</h2>
 	<%= f.submit %>
