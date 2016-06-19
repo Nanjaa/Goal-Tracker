@@ -4,7 +4,7 @@ class AmountsController < ApplicationController
 	def create
 		@goal = Goal.find(params[:goal_id])
 		@amount = @goal.amounts.create(amount_params)
-		redirect_to goal_path(@goal)
+		redirect_to welcome_index_path
 	end
 
 	private

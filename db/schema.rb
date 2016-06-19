@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160614013721) do
+ActiveRecord::Schema.define(version: 20160619035457) do
 
   create_table "amounts", force: :cascade do |t|
     t.string   "goal_amount"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20160614013721) do
     t.string   "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "test"
   end
 
 end

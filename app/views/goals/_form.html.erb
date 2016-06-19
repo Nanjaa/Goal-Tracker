@@ -1,21 +1,24 @@
-<%= form_for @goal do |f| %>
-	<% if @goal.errors.any? %>
-		<div id="error_explanation">
-			<h2>
-				<%= pluralize(@goal.errors.count, "error") %> prohibited
-					this goal from being saved:
-			</h2>
-			<ul>
-				<% @goal.errors.full_messages.each do |msg| %>
-					<li><% msg %></li>
-				<% end %>
-			</ul>
-		</div>
-	<% end %>
+<h1>Welcome Back, USER!</h1>
+<%= link_to 'Would you like to add a new goal?', new_goal_path %>
+<% count = 0 %>
 
-	<h3>I'm going to start doing </h3>
-	<%= f.text_field :goal_amount %>
-	<h3> of </h3>
-	<%= f.text_field :title, placeholder: "exercise, words, cleaning" %>
-	<%= f.submit %>
+<h2>Add a new goal</h2>
+<%= render 'form' %>
+
+<% @goals.each do |goal| %>
+	<table>
+		<tr>
+			<th>Today's Goals:</th>
+		</tr>
+	<% @goal = Goal.find goal.id %>
+	<% @goal.amounts.each do |amount| %>
+		<tr>
+			<td><%= amount.goal_amount %> <%= goal.title %></td>
+			<td><%= link_to 'Show', goal_path(goal) %></td>
+			<td><%= link_to 'Edit', edit_goal_path(goal) %></td>
+			<td><%= link_to 'Delete', goal_path(goal), method: :delete,
+				data: {	confirm: 'Are you sure?'} %></td>
+		</tr>
+	<% end %>
+	</table>
 <% end %>

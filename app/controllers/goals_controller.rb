@@ -19,7 +19,7 @@ class GoalsController < ApplicationController
 		@goal = Goal.new(goal_params)
 
 		if @goal.save
-			redirect_to @goal
+			redirect_to edit_goal_path(@goal)
 		else
 			render 'new'
 		end
@@ -39,12 +39,12 @@ class GoalsController < ApplicationController
 		@goal = Goal.find(params[:id])
 		@goal.destroy
 
-		redirect_to goals_path
+		redirect_to welcome_index_path
 	end
 
 	private
 		def goal_params
-			params.require(:goal).permit(:title)
+			params.require(:goal).permit(:title, :test)
 		end
 
 end
