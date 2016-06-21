@@ -14892,3 +14892,895 @@ Processing by WelcomeController#index as HTML
   [1m[36mAmount Load (0.1ms)[0m  [1mSELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?[0m  [["goal_id", 30]]
   Rendered welcome/index.html.erb within layouts/application (9.4ms)
 Completed 200 OK in 30ms (Views: 28.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/welcome/index" for ::1 at 2016-06-20 18:56:51 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/_form.html.erb (11.0ms)
+  [1m[35mGoal Load (16.7ms)[0m  SELECT "goals".* FROM "goals"
+  [1m[36mGoal Load (0.2ms)[0m  [1mSELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mAmount Load (0.2ms)[0m  SELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?  [["goal_id", 9]]
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 27]]
+  [1m[35mAmount Load (0.1ms)[0m  SELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?  [["goal_id", 27]]
+  [1m[36mGoal Load (0.2ms)[0m  [1mSELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 28]]
+  [1m[35mAmount Load (0.1ms)[0m  SELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?  [["goal_id", 28]]
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 29]]
+  [1m[35mAmount Load (0.1ms)[0m  SELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?  [["goal_id", 29]]
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 30]]
+  [1m[35mAmount Load (0.1ms)[0m  SELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?  [["goal_id", 30]]
+  Rendered welcome/index.html.erb within layouts/application (75.9ms)
+Completed 200 OK in 384ms (Views: 346.4ms | ActiveRecord: 17.9ms)
+
+
+Started GET "/assets/amounts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-20 18:56:52 -0500
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-20 18:56:52 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-06-20 18:56:52 -0500
+
+
+Started GET "/assets/goals.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-20 18:56:52 -0500
+
+
+Started GET "/assets/amounts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-20 18:56:52 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-20 18:56:52 -0500
+
+
+Started GET "/assets/goals.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-20 18:56:52 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-20 18:56:52 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-20 18:56:52 -0500
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-20 18:56:52 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-06-20 18:56:52 -0500
+
+
+Started POST "/goals" for ::1 at 2016-06-20 18:57:09 -0500
+Processing by GoalsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aZcx6hYfXLC9XJ/po3orzQNyxWmkr9Q6pM2sP2COozQvuC1J7B8zhN5+h1wL7Cj4e8s5PEAz1gHemJV13ZX3uA==", "goal"=>{"test"=>"", "title"=>"asd"}, "commit"=>"Create Goal"}
+  [1m[36m (2.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (58.6ms)[0m  INSERT INTO "goals" ("title", "test", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "asd"], ["test", ""], ["created_at", "2016-06-20 23:57:09.423827"], ["updated_at", "2016-06-20 23:57:09.423827"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/goals/31/edit
+Completed 302 Found in 76ms (ActiveRecord: 62.6ms)
+
+
+Started GET "/goals/31/edit" for ::1 at 2016-06-20 18:57:09 -0500
+Processing by GoalsController#edit as HTML
+  Parameters: {"id"=>"31"}
+  [1m[35mGoal Load (0.2ms)[0m  SELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1  [["id", 31]]
+  Rendered goals/edit.html.erb within layouts/application (13.6ms)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 0.2ms)
+
+SyntaxError (/Users/stephanie/Desktop/goaltracker/app/views/goals/edit.html.erb:7: syntax error, unexpected '<', expecting ')'
+	<%= f.text_field :goal_amount );@output_buffer.safe_append='
+	 ^
+/Users/stephanie/Desktop/goaltracker/app/views/goals/edit.html.erb:16: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+             ^
+/Users/stephanie/Desktop/goaltracker/app/views/goals/edit.html.erb:19: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/stephanie/Desktop/goaltracker/app/views/goals/edit.html.erb:21: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/goals/edit.html.erb:7: syntax error, unexpected '<', expecting ')'
+  app/views/goals/edit.html.erb:16: syntax error, unexpected keyword_end, expecting ')'
+  app/views/goals/edit.html.erb:19: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/goals/edit.html.erb:21: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (95.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (90.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (195.9ms)
+
+
+Started GET "/goals/31/edit" for ::1 at 2016-06-20 18:58:31 -0500
+Processing by GoalsController#edit as HTML
+  Parameters: {"id"=>"31"}
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 31]]
+  Rendered goals/edit.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 213ms (Views: 212.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/amounts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-20 18:58:31 -0500
+
+
+Started GET "/assets/goals.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-20 18:58:31 -0500
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-20 18:58:31 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-20 18:58:31 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-06-20 18:58:31 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-20 18:58:31 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-20 18:58:31 -0500
+
+
+Started GET "/assets/amounts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-20 18:58:32 -0500
+
+
+Started GET "/assets/goals.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-20 18:58:32 -0500
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-20 18:58:32 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-06-20 18:58:32 -0500
+
+
+Started POST "/goals/31/amounts" for ::1 at 2016-06-20 18:58:38 -0500
+Processing by AmountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"28rcYVfEX36BvN3+KmXz8z7Qgq7vhXSuYViDYXQGtaSd5cDCrcQwSuKexUuC8/DGRml++wsZdpUbDboryR3hKA==", "amount"=>{"goal_amount"=>"", "points"=>"123"}, "commit"=>"Create Amount", "goal_id"=>"31"}
+  [1m[35mGoal Load (0.1ms)[0m  SELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1  [["id", 31]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (22.8ms)[0m  INSERT INTO "amounts" ("goal_amount", "points", "goal_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["goal_amount", ""], ["points", 123], ["goal_id", 31], ["created_at", "2016-06-20 23:58:38.461062"], ["updated_at", "2016-06-20 23:58:38.461062"]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/welcome/index
+Completed 302 Found in 32ms (ActiveRecord: 25.2ms)
+
+
+Started GET "/welcome/index" for ::1 at 2016-06-20 18:58:38 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/_form.html.erb (1.2ms)
+  [1m[35mGoal Load (0.2ms)[0m  SELECT "goals".* FROM "goals"
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mAmount Load (0.1ms)[0m  SELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?  [["goal_id", 9]]
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 27]]
+  [1m[35mAmount Load (0.2ms)[0m  SELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?  [["goal_id", 27]]
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 28]]
+  [1m[35mAmount Load (0.1ms)[0m  SELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?  [["goal_id", 28]]
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 29]]
+  [1m[35mAmount Load (0.1ms)[0m  SELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?  [["goal_id", 29]]
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 30]]
+  [1m[35mAmount Load (0.1ms)[0m  SELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?  [["goal_id", 30]]
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 31]]
+  [1m[35mAmount Load (0.1ms)[0m  SELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?  [["goal_id", 31]]
+  Rendered welcome/index.html.erb within layouts/application (29.9ms)
+Completed 200 OK in 70ms (Views: 68.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/welcome/index" for ::1 at 2016-06-20 18:59:28 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/_form.html.erb (1.0ms)
+  [1m[36mGoal Load (0.2ms)[0m  [1mSELECT "goals".* FROM "goals"[0m
+  [1m[35mGoal Load (0.1ms)[0m  SELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mAmount Load (0.1ms)[0m  [1mSELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?[0m  [["goal_id", 9]]
+  [1m[35mGoal Load (0.1ms)[0m  SELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1  [["id", 27]]
+  [1m[36mAmount Load (0.1ms)[0m  [1mSELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?[0m  [["goal_id", 27]]
+  [1m[35mGoal Load (0.1ms)[0m  SELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1  [["id", 28]]
+  [1m[36mAmount Load (0.1ms)[0m  [1mSELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?[0m  [["goal_id", 28]]
+  [1m[35mGoal Load (0.1ms)[0m  SELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1  [["id", 29]]
+  [1m[36mAmount Load (0.1ms)[0m  [1mSELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?[0m  [["goal_id", 29]]
+  [1m[35mGoal Load (0.1ms)[0m  SELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1  [["id", 30]]
+  [1m[36mAmount Load (0.1ms)[0m  [1mSELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?[0m  [["goal_id", 30]]
+  [1m[35mGoal Load (0.1ms)[0m  SELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1  [["id", 31]]
+  [1m[36mAmount Load (0.1ms)[0m  [1mSELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?[0m  [["goal_id", 31]]
+  Rendered welcome/index.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 224ms (Views: 221.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/amounts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-20 18:59:28 -0500
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-20 18:59:28 -0500
+
+
+Started GET "/assets/goals.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-20 18:59:28 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-20 18:59:28 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-06-20 18:59:28 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-20 18:59:28 -0500
+
+
+Started GET "/assets/amounts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-20 18:59:28 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-20 18:59:28 -0500
+
+
+Started GET "/assets/goals.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-20 18:59:28 -0500
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-20 18:59:28 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-06-20 18:59:28 -0500
+
+
+Started GET "/welcome/index" for ::1 at 2016-06-20 19:09:05 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/_form.html.erb (1.3ms)
+  [1m[35mGoal Load (0.2ms)[0m  SELECT "goals".* FROM "goals"
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mAmount Load (0.1ms)[0m  SELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?  [["goal_id", 9]]
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 27]]
+  [1m[35mAmount Load (0.1ms)[0m  SELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?  [["goal_id", 27]]
+  [1m[36mGoal Load (0.3ms)[0m  [1mSELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 28]]
+  [1m[35mAmount Load (0.1ms)[0m  SELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?  [["goal_id", 28]]
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 29]]
+  [1m[35mAmount Load (0.1ms)[0m  SELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?  [["goal_id", 29]]
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 30]]
+  [1m[35mAmount Load (0.1ms)[0m  SELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?  [["goal_id", 30]]
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 31]]
+  [1m[35mAmount Load (0.1ms)[0m  SELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?  [["goal_id", 31]]
+  Rendered welcome/index.html.erb within layouts/application (21.2ms)
+Completed 200 OK in 234ms (Views: 232.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/amounts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-20 19:09:06 -0500
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-20 19:09:06 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-20 19:09:06 -0500
+
+
+Started GET "/assets/goals.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-20 19:09:06 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-20 19:09:06 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-06-20 19:09:06 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-20 19:09:06 -0500
+
+
+Started GET "/assets/amounts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-20 19:09:06 -0500
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-20 19:09:06 -0500
+
+
+Started GET "/assets/goals.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-20 19:09:06 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-06-20 19:09:06 -0500
+
+
+Started POST "/goals" for ::1 at 2016-06-20 19:09:08 -0500
+Processing by GoalsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aqBu8lJj48BjQLFbh7EUPw8tOwVLIWvEiqY9OxEb2hYsj3JRqGOM9ABiqe4vJxcKd5THUK+9af/w8wRxrACOmg==", "goal"=>{"test"=>"", "title"=>"asdfasd"}, "commit"=>"Create Goal"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (46.8ms)[0m  INSERT INTO "goals" ("title", "test", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "asdfasd"], ["test", ""], ["created_at", "2016-06-21 00:09:08.187292"], ["updated_at", "2016-06-21 00:09:08.187292"]]
+  [1m[36m (3.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/goals/32/edit
+Completed 302 Found in 54ms (ActiveRecord: 49.9ms)
+
+
+Started GET "/goals/32/edit" for ::1 at 2016-06-20 19:09:08 -0500
+Processing by GoalsController#edit as HTML
+  Parameters: {"id"=>"32"}
+  [1m[35mGoal Load (0.1ms)[0m  SELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1  [["id", 32]]
+  Rendered goals/edit.html.erb within layouts/application (5.5ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    1: <h1>Creating New Goal...</h1>
+    2: 
+    3: <% if @amount.errors.any? %>
+    4: 	<div id="error explanation">
+    5: 		<h2><%= pluralize(@amount.errors.count, "error") %>
+    6: 			prohibited this goal from being saved:</h2>
+  app/views/goals/edit.html.erb:3:in `_app_views_goals_edit_html_erb___1704850919162059867_70349834642100'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (83.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (104.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (207.1ms)
+
+
+Started GET "/goals/32/edit" for ::1 at 2016-06-20 19:10:37 -0500
+Processing by GoalsController#edit as HTML
+  Parameters: {"id"=>"32"}
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 32]]
+  Rendered goals/edit.html.erb within layouts/application (10.3ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    2: 
+    3: <%= form_for([@goal, @goal.amounts.build]) do |f| %>
+    4: 
+    5: 	<% if @amount.errors.any? %>
+    6: 		<div id="error explanation">
+    7: 			<h2><%= pluralize(@amount.errors.count, "error") %>
+    8: 				prohibited this goal from being saved:</h2>
+  app/views/goals/edit.html.erb:5:in `block in _app_views_goals_edit_html_erb___1704850919162059867_70349836395360'
+  app/views/goals/edit.html.erb:3:in `_app_views_goals_edit_html_erb___1704850919162059867_70349836395360'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (81.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (88.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (202.5ms)
+
+
+Started GET "/goals/32/edit" for ::1 at 2016-06-20 19:20:08 -0500
+Processing by GoalsController#edit as HTML
+  Parameters: {"id"=>"32"}
+  [1m[35mGoal Load (13.3ms)[0m  SELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1  [["id", 32]]
+  Rendered goals/edit.html.erb within layouts/application (7.3ms)
+Completed 500 Internal Server Error in 108ms (ActiveRecord: 14.2ms)
+
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    1: <h1>Creating New Goal...</h1>
+    2: 
+    3: <% if @amount.errors.any? %>
+    4: 	<div id="error explanation">
+    5: 		<h2><%= pluralize(@amount.errors.count, "error") %>
+    6: 			prohibited this goal from being saved:</h2>
+  app/views/goals/edit.html.erb:3:in `_app_views_goals_edit_html_erb___1704850919162059867_70349763591100'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (79.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (125.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (231.8ms)
+
+
+Started GET "/goals/32/edit" for ::1 at 2016-06-20 19:20:33 -0500
+Processing by GoalsController#edit as HTML
+  Parameters: {"id"=>"32"}
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 32]]
+  Rendered goals/edit.html.erb within layouts/application (24.4ms)
+Completed 200 OK in 219ms (Views: 217.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/amounts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-20 19:20:33 -0500
+
+
+Started GET "/assets/goals.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-20 19:20:33 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-20 19:20:33 -0500
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-20 19:20:33 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-06-20 19:20:33 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-20 19:20:33 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-20 19:20:33 -0500
+
+
+Started GET "/assets/amounts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-20 19:20:33 -0500
+
+
+Started GET "/assets/goals.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-20 19:20:33 -0500
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-20 19:20:33 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-06-20 19:20:33 -0500
+
+
+Started POST "/goals/32/amounts" for ::1 at 2016-06-20 19:20:37 -0500
+Processing by AmountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"H4nMRLiGGc2H8Scwc9JMuDKl9Nj94fkss0z7UAMoHyZZptDnQoZ2+eTTP4XbRE+NShwIjRl9+xfJGcIavjNLqg==", "amount"=>{"goal_amount"=>"", "points"=>"asdf"}, "commit"=>"Create Amount", "goal_id"=>"32"}
+  [1m[35mGoal Load (0.1ms)[0m  SELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1  [["id", 32]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered goals/edit.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 32ms (Views: 25.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/goals/32/amounts" for ::1 at 2016-06-20 19:20:41 -0500
+Processing by AmountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"We8+7ycRlG0OLsT5mEc+SbULGrox5BrgKwIl6foxYxkfwCJM3RH7WW0M3Eww0T18zbLm79V4GNtRVxyjRyo3lQ==", "amount"=>{"goal_amount"=>"", "points"=>"73456243543"}, "commit"=>"Create Amount", "goal_id"=>"32"}
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 32]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.3ms)
+
+RangeError (73456243543 is out of range for ActiveRecord::Type::Integer with limit 4):
+  app/controllers/amounts_controller.rb:6:in `create'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (81.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (90.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (191.9ms)
+
+
+Started POST "/goals/32/amounts" for ::1 at 2016-06-20 19:23:33 -0500
+Processing by AmountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"We8+7ycRlG0OLsT5mEc+SbULGrox5BrgKwIl6foxYxkfwCJM3RH7WW0M3Eww0T18zbLm79V4GNtRVxyjRyo3lQ==", "amount"=>{"goal_amount"=>"", "points"=>"73"}, "commit"=>"Create Amount", "goal_id"=>"32"}
+  [1m[35mGoal Load (0.2ms)[0m  SELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1  [["id", 32]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (44.5ms)[0m  INSERT INTO "amounts" ("goal_amount", "points", "goal_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["goal_amount", ""], ["points", 73], ["goal_id", 32], ["created_at", "2016-06-21 00:23:33.800528"], ["updated_at", "2016-06-21 00:23:33.800528"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/welcome/index
+Completed 302 Found in 52ms (ActiveRecord: 46.4ms)
+
+
+Started GET "/welcome/index" for ::1 at 2016-06-20 19:23:33 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/_form.html.erb (1.4ms)
+  [1m[35mGoal Load (0.2ms)[0m  SELECT "goals".* FROM "goals"
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mAmount Load (0.1ms)[0m  SELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?  [["goal_id", 9]]
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 27]]
+  [1m[35mAmount Load (0.1ms)[0m  SELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?  [["goal_id", 27]]
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 28]]
+  [1m[35mAmount Load (0.1ms)[0m  SELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?  [["goal_id", 28]]
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 29]]
+  [1m[35mAmount Load (0.1ms)[0m  SELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?  [["goal_id", 29]]
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 30]]
+  [1m[35mAmount Load (0.1ms)[0m  SELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?  [["goal_id", 30]]
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 31]]
+  [1m[35mAmount Load (0.1ms)[0m  SELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?  [["goal_id", 31]]
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 32]]
+  [1m[35mAmount Load (0.1ms)[0m  SELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?  [["goal_id", 32]]
+  Rendered welcome/index.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 227ms (Views: 224.7ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/goals" for ::1 at 2016-06-20 19:29:14 -0500
+Processing by GoalsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QN+nOqETtdFZXeCAiXpdoyjUUJtHcHxY5RDnA6/7Ds4G8LuZWxPa5Tp/+DUh7F6WUG2szqPsfmOfRd5JEuBaQg==", "goal"=>{"test"=>"", "title"=>"asdf"}, "commit"=>"Create Goal"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (12.5ms)[0m  INSERT INTO "goals" ("title", "test", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "asdf"], ["test", ""], ["created_at", "2016-06-21 00:29:14.926728"], ["updated_at", "2016-06-21 00:29:14.926728"]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/goals/33/edit
+Completed 302 Found in 19ms (ActiveRecord: 14.5ms)
+
+
+Started GET "/goals/33/edit" for ::1 at 2016-06-20 19:29:14 -0500
+Processing by GoalsController#edit as HTML
+  Parameters: {"id"=>"33"}
+  [1m[35mGoal Load (0.2ms)[0m  SELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1  [["id", 33]]
+  Rendered goals/edit.html.erb within layouts/application (8.4ms)
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    1: <h1>Creating New Goal...</h1>
+    2: 
+    3: <% if @amount.errors.any? %>
+    4: 	<div id="error explanation">
+    5: 		<h2><%= pluralize(@amount.errors.count, "error") %>
+    6: 			prohibited this goal from being saved:</h2>
+  app/views/goals/edit.html.erb:3:in `_app_views_goals_edit_html_erb___1704850919162059867_70349813182380'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (131.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (93.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (218.1ms)
+
+
+Started GET "/goals/33/edit" for ::1 at 2016-06-20 19:30:13 -0500
+Processing by GoalsController#edit as HTML
+  Parameters: {"id"=>"33"}
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 33]]
+  Rendered goals/edit.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 235ms (Views: 213.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/amounts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-20 19:30:13 -0500
+
+
+Started GET "/assets/goals.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-20 19:30:13 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-06-20 19:30:13 -0500
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-20 19:30:13 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-20 19:30:13 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-20 19:30:13 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-20 19:30:13 -0500
+
+
+Started GET "/assets/amounts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-20 19:30:13 -0500
+
+
+Started GET "/assets/goals.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-20 19:30:13 -0500
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-20 19:30:13 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-06-20 19:30:13 -0500
+
+
+Started POST "/goals/33/amounts" for ::1 at 2016-06-20 19:30:16 -0500
+Processing by AmountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xHBIrJOW52BHpoJHtJIEA68U5iUT+sgbqJRxbh2hbN2CX1QPaZaIVCSEmvIcBAc2160acPdmyiDSwUgkoLo4UQ==", "amount"=>{"goal_amount"=>"", "points"=>"asdf"}, "commit"=>"Create Amount", "goal_id"=>"33"}
+  [1m[35mGoal Load (0.1ms)[0m  SELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1  [["id", 33]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered goals/edit.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 27ms (Views: 23.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/goals/33/amounts" for ::1 at 2016-06-20 19:30:20 -0500
+Processing by AmountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Qt210GrLFXUPkSDPkE7Z1ocAgjj2DILKETJ2YJG2I0sE8qlzkMt6QWyzOHo42Nrj/7l+bRKQgPFrZ08qLK13xw==", "amount"=>{"goal_amount"=>"", "points"=>"345"}, "commit"=>"Create Amount", "goal_id"=>"33"}
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 33]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered goals/edit.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 55ms (Views: 51.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/goals/33/amounts" for ::1 at 2016-06-20 19:30:21 -0500
+Processing by AmountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BeLcI5fUMyWtvXHhYkjxdSH92+ck4kviuXj2Wj0NqPVDzcCAbdRcEc6faVTK3vJAWUQnssB+SdnDLc8QgBb8eQ==", "amount"=>{"goal_amount"=>"", "points"=>""}, "commit"=>"Create Amount", "goal_id"=>"33"}
+  [1m[35mGoal Load (0.1ms)[0m  SELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1  [["id", 33]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered goals/edit.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 57ms (Views: 53.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/goals/33/amounts" for ::1 at 2016-06-20 19:30:22 -0500
+Processing by AmountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QoJewFOBTmdXyFodo3cagXCPlbDf36uoEvyqqzTbEfYErUJjqYEhUzTqQqgL4Rm0CDZp5TtDqZNoqZPhicBFeg==", "amount"=>{"goal_amount"=>"", "points"=>""}, "commit"=>"Create Amount", "goal_id"=>"33"}
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 33]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered goals/edit.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 56ms (Views: 51.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/goals/33/amounts" for ::1 at 2016-06-20 19:30:25 -0500
+Processing by AmountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wr9st6Zlzy5WoGQH2Rbk0M1+CAjT/88rEwWwvw7c/1uEkHAUXGWgGjWCfLJxgOfltcf0XTdjzRBpUIn1s8er1w==", "amount"=>{"goal_amount"=>"", "points"=>"1324234"}, "commit"=>"Create Amount", "goal_id"=>"33"}
+  [1m[35mGoal Load (0.1ms)[0m  SELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1  [["id", 33]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered goals/edit.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 56ms (Views: 52.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/welcome/index" for ::1 at 2016-06-20 19:30:27 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/_form.html.erb (1.1ms)
+  [1m[36mGoal Load (0.2ms)[0m  [1mSELECT "goals".* FROM "goals"[0m
+  [1m[35mGoal Load (0.1ms)[0m  SELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mAmount Load (0.1ms)[0m  [1mSELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?[0m  [["goal_id", 9]]
+  [1m[35mGoal Load (0.1ms)[0m  SELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1  [["id", 27]]
+  [1m[36mAmount Load (0.1ms)[0m  [1mSELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?[0m  [["goal_id", 27]]
+  [1m[35mGoal Load (0.1ms)[0m  SELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1  [["id", 28]]
+  [1m[36mAmount Load (0.1ms)[0m  [1mSELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?[0m  [["goal_id", 28]]
+  [1m[35mGoal Load (0.1ms)[0m  SELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1  [["id", 29]]
+  [1m[36mAmount Load (0.1ms)[0m  [1mSELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?[0m  [["goal_id", 29]]
+  [1m[35mGoal Load (0.1ms)[0m  SELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1  [["id", 30]]
+  [1m[36mAmount Load (0.1ms)[0m  [1mSELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?[0m  [["goal_id", 30]]
+  [1m[35mGoal Load (0.1ms)[0m  SELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1  [["id", 31]]
+  [1m[36mAmount Load (0.1ms)[0m  [1mSELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?[0m  [["goal_id", 31]]
+  [1m[35mGoal Load (0.1ms)[0m  SELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1  [["id", 32]]
+  [1m[36mAmount Load (0.1ms)[0m  [1mSELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?[0m  [["goal_id", 32]]
+  [1m[35mGoal Load (0.1ms)[0m  SELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1  [["id", 33]]
+  [1m[36mAmount Load (0.1ms)[0m  [1mSELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?[0m  [["goal_id", 33]]
+  Rendered welcome/index.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 46ms (Views: 44.1ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/goals" for ::1 at 2016-06-20 19:30:42 -0500
+Processing by GoalsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aqP+vlt7oiIln9ppsyoJ9j6Qso2101Xq+7gyVjy8ZtwsjOIdoXvNFka9wtwbvArDRilO2FFPV9GB7QscgacyUA==", "goal"=>{"test"=>"", "title"=>"asdfasdfasdf"}, "commit"=>"Create Goal"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "goals" ("title", "test", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "asdfasdfasdf"], ["test", ""], ["created_at", "2016-06-21 00:30:42.932628"], ["updated_at", "2016-06-21 00:30:42.932628"]]
+  [1m[35m (2.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/goals/34/edit
+Completed 302 Found in 17ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/goals/34/edit" for ::1 at 2016-06-20 19:30:42 -0500
+Processing by GoalsController#edit as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mGoal Load (0.2ms)[0m  [1mSELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 34]]
+  Rendered goals/edit.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 43ms (Views: 41.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/goals/34/amounts" for ::1 at 2016-06-20 19:30:46 -0500
+Processing by AmountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Il5fVqqC56pzmwQKDaArKiavp+VO1A0je4IeaSljr/lkcUP1UIKInhC5HL+lNigfXhZbsKpIDxgB1ycjlHj7dQ==", "amount"=>{"goal_amount"=>"", "points"=>"346"}, "commit"=>"Create Amount", "goal_id"=>"34"}
+  [1m[35mGoal Load (0.1ms)[0m  SELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1  [["id", 34]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (30.1ms)[0m  INSERT INTO "amounts" ("goal_amount", "points", "goal_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["goal_amount", ""], ["points", 346], ["goal_id", 34], ["created_at", "2016-06-21 00:30:46.987261"], ["updated_at", "2016-06-21 00:30:46.987261"]]
+  [1m[36m (2.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/welcome/index
+Completed 302 Found in 40ms (ActiveRecord: 33.3ms)
+
+
+Started GET "/welcome/index" for ::1 at 2016-06-20 19:30:47 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/_form.html.erb (1.5ms)
+  [1m[35mGoal Load (0.2ms)[0m  SELECT "goals".* FROM "goals"
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mAmount Load (0.1ms)[0m  SELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?  [["goal_id", 9]]
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 27]]
+  [1m[35mAmount Load (0.1ms)[0m  SELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?  [["goal_id", 27]]
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 28]]
+  [1m[35mAmount Load (0.1ms)[0m  SELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?  [["goal_id", 28]]
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 29]]
+  [1m[35mAmount Load (0.1ms)[0m  SELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?  [["goal_id", 29]]
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 30]]
+  [1m[35mAmount Load (0.1ms)[0m  SELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?  [["goal_id", 30]]
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 31]]
+  [1m[35mAmount Load (0.1ms)[0m  SELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?  [["goal_id", 31]]
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 32]]
+  [1m[35mAmount Load (0.1ms)[0m  SELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?  [["goal_id", 32]]
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 33]]
+  [1m[35mAmount Load (0.1ms)[0m  SELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?  [["goal_id", 33]]
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 34]]
+  [1m[35mAmount Load (0.1ms)[0m  SELECT "amounts".* FROM "amounts" WHERE "amounts"."goal_id" = ?  [["goal_id", 34]]
+  Rendered welcome/index.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 46ms (Views: 44.1ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/goals" for ::1 at 2016-06-20 19:32:31 -0500
+Processing by GoalsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LSlP3k5ijNdNNSCbbepfKl78IM6OIahhdQRt+OgvuRxrBlN9tGLj4y4XOC7FfFwfJkXcm2q9qloPUVSyVTTtkA==", "goal"=>{"test"=>"", "title"=>"asdfas"}, "commit"=>"Create Goal"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (19.7ms)[0m  INSERT INTO "goals" ("title", "test", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "asdfas"], ["test", ""], ["created_at", "2016-06-21 00:32:31.793121"], ["updated_at", "2016-06-21 00:32:31.793121"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/goals/35/edit
+Completed 302 Found in 24ms (ActiveRecord: 21.2ms)
+
+
+Started GET "/goals/35/edit" for ::1 at 2016-06-20 19:32:31 -0500
+Processing by GoalsController#edit as HTML
+  Parameters: {"id"=>"35"}
+  [1m[35mGoal Load (0.1ms)[0m  SELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1  [["id", 35]]
+  Rendered goals/edit.html.erb within layouts/application (4.9ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    1: <h1>Creating New Goal...</h1>
+    2: 
+    3: <% if @amount.errors.any? %>
+    4: 	<div id="error explanation">
+    5: 		<h2><%= pluralize(@amount.errors.count, "error") %>
+    6: 			prohibited this goal from being saved:</h2>
+  app/views/goals/edit.html.erb:3:in `_app_views_goals_edit_html_erb___1704850919162059867_70349827084940'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (79.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (73.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (157.9ms)
+
+
+Started GET "/goals/35/edit" for ::1 at 2016-06-20 19:35:50 -0500
+Processing by GoalsController#edit as HTML
+  Parameters: {"id"=>"35"}
+  [1m[36mGoal Load (0.2ms)[0m  [1mSELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 35]]
+  Rendered goals/edit.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 233ms (Views: 200.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/amounts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-20 19:35:50 -0500
+
+
+Started GET "/assets/goals.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-20 19:35:50 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-20 19:35:50 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-06-20 19:35:50 -0500
+
+
+Started GET "/assets/amounts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-20 19:35:50 -0500
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-20 19:35:50 -0500
+
+
+Started GET "/assets/goals.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-20 19:35:50 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-20 19:35:50 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-20 19:35:50 -0500
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-20 19:35:50 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-06-20 19:35:50 -0500
+
+
+Started POST "/goals/35/amounts" for ::1 at 2016-06-20 19:35:54 -0500
+Processing by AmountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gLFhH9lHVaF2xiGK1h082naETAu+YmmPbknX7q4iegrGnn28I0c6lRXkOT9+iz/vDj2wXlr+a7QUHO6kEzkuhg==", "amount"=>{"goal_amount"=>"", "points"=>"asdf"}, "commit"=>"Create Amount", "goal_id"=>"35"}
+  [1m[35mGoal Load (0.1ms)[0m  SELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1  [["id", 35]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered goals/edit.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 33ms (Views: 26.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/goals/35/amounts" for ::1 at 2016-06-20 19:36:48 -0500
+Processing by AmountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gLFhH9lHVaF2xiGK1h082naETAu+YmmPbknX7q4iegrGnn28I0c6lRXkOT9+iz/vDj2wXlr+a7QUHO6kEzkuhg==", "amount"=>{"goal_amount"=>"", "points"=>"asdf"}, "commit"=>"Create Amount", "goal_id"=>"35"}
+  [1m[36mGoal Load (0.1ms)[0m  [1mSELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1[0m  [["id", 35]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered goals/edit.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 72ms (Views: 66.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/amounts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-20 19:36:48 -0500
+
+
+Started GET "/assets/goals.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-20 19:36:48 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-06-20 19:36:48 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-20 19:36:48 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-20 19:36:48 -0500
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-20 19:36:48 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-20 19:36:48 -0500
+
+
+Started GET "/assets/amounts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-20 19:36:49 -0500
+
+
+Started GET "/assets/goals.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-20 19:36:49 -0500
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-20 19:36:49 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-06-20 19:36:49 -0500
+
+
+Started POST "/goals/35/amounts" for ::1 at 2016-06-20 19:38:03 -0500
+Processing by AmountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gLFhH9lHVaF2xiGK1h082naETAu+YmmPbknX7q4iegrGnn28I0c6lRXkOT9+iz/vDj2wXlr+a7QUHO6kEzkuhg==", "amount"=>{"goal_amount"=>"", "points"=>"asdf"}, "commit"=>"Create Amount", "goal_id"=>"35"}
+  [1m[35mGoal Load (0.1ms)[0m  SELECT  "goals".* FROM "goals" WHERE "goals"."id" = ? LIMIT 1  [["id", 35]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered goals/edit.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 95ms (Views: 89.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/amounts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-20 19:38:03 -0500
+
+
+Started GET "/assets/goals.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-20 19:38:03 -0500
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-20 19:38:03 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-20 19:38:03 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-20 19:38:03 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-20 19:38:03 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-06-20 19:38:03 -0500
+
+
+Started GET "/assets/amounts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-20 19:38:03 -0500
+
+
+Started GET "/assets/goals.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-20 19:38:03 -0500
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-20 19:38:03 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-06-20 19:38:03 -0500

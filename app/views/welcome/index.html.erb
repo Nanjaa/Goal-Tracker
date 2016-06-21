@@ -13,7 +13,7 @@
 	<% @goal = Goal.find goal.id %>
 	<% @goal.amounts.each do |amount| %>
 		<tr>
-			<td><%= amount.goal_amount %> <%= goal.title %></td>
+			<td><strong><%=amount.points %></strong><%= amount.goal_amount %> <%= goal.title %></td>
 			<td><%= link_to 'Show', goal_path(goal) %></td>
 			<td><%= link_to 'Edit', edit_goal_path(goal) %></td>
 			<td><%= link_to 'Delete', goal_path(goal), method: :delete,

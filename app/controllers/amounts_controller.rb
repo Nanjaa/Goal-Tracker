@@ -5,7 +5,7 @@ class AmountsController < ApplicationController
 		@goal = Goal.find(params[:goal_id])
 		@amount = @goal.amounts.create(amount_params)
 		
-		if @goal.save
+		if @amount.save
 			redirect_to welcome_index_path
 		else
 			render "goals/edit"

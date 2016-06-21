@@ -13,6 +13,7 @@ class GoalsController < ApplicationController
 
 	def edit
 		@goal = Goal.find(params[:id])
+		@amount = @goal.amounts.build
 	end
 
 	def create
