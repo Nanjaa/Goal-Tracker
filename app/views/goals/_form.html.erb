@@ -1,24 +1,24 @@
-<h1>Welcome Back, USER!</h1>
-<%= link_to 'Would you like to add a new goal?', new_goal_path %>
-<% count = 0 %>
+<% if @amount.errors.any? %>
+	<div id="error explanation">
+		<h2><%= pluralize(@amount.errors.count, "error") %>
+			prohibited this goal from being saved:</h2>
+		<ul>
+			<% @amount.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>
 
-<h2>Add a new goal</h2>
-<%= render 'form' %>
+<%= form_for([@goal, @goal.amounts.build]) do |f| %>
+	<h2>Is this correct?</h2>
+	<%= f.text_field :goal_amount %>
+	<%= @goal.test %>
+	of
+	<%= @goal.title %><br>
+	<h2>How many points is this goal worth?</h2>
+	<%= f.text_field :points %>
 
-<% @goals.each do |goal| %>
-	<table>
-		<tr>
-			<th>Today's Goals:</th>
-		</tr>
-	<% @goal = Goal.find goal.id %>
-	<% @goal.amounts.each do |amount| %>
-		<tr>
-			<td><%= amount.goal_amount %> <%= goal.title %></td>
-			<td><%= link_to 'Show', goal_path(goal) %></td>
-			<td><%= link_to 'Edit', edit_goal_path(goal) %></td>
-			<td><%= link_to 'Delete', goal_path(goal), method: :delete,
-				data: {	confirm: 'Are you sure?'} %></td>
-		</tr>
-	<% end %>
-	</table>
+	<h2>Would you like to add other incements for more points?</h2>
+	<%= f.submit %>
 <% end %>

@@ -1,17 +1,10 @@
-<p>
-	<strong>Title:</strong>
-	<%= @goal.title %>
-</p>
+<h1>Let's check out this goal.</h1>
 
-<strong>Amounts</strong>
 <% @goal.amounts.each do |amount| %>
 	<p>
-		<strong>Amount:</strong>
-		<%= amount.goal_amount %>
+		<strong><%= amount.points %> Points: </strong>
+		<%= amount.goal_amount %> of <%= @goal.title %>
 	</p>
-	<p>
-		<strong>Points:</strong>
-		<%= amount.points %>
 <% end %>
 
 <strong>Add goal amount</strong>
