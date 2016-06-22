@@ -13,10 +13,8 @@
 		</div>
 	<% end %>
 
-	<h3>I'm going to start doing </h3>
-
-	<%= f.text_field :test, placeholder: "this is a test" %>
-	<h3> of </h3>
-	<%= f.text_field :title, placeholder: "exercise, words, cleaning" %>
+	<p>
+		<strong>I'm going to start doing </strong><%= f.text_field :test, placeholder: "this is a test" %> of <%= f.text_field :title, placeholder: "exercise, words, cleaning" %>
+	</p>
 		<%= f.submit %>
 <% end %>

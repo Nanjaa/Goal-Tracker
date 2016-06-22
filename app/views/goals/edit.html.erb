@@ -1,28 +1,11 @@
-<h1>Creating New Goal...</h1>
+<h1>Let's fix up this goal.</h1>
 
-<% if @amount.errors.any? %>
-	<div id="error explanation">
-		<h2><%= pluralize(@amount.errors.count, "error") %>
-			prohibited this goal from being saved:</h2>
-		<ul>
-			<% @amount.errors.full_messages.each do |msg| %>
-				<li><%= msg %></li>
-			<% end %>
-		</ul>
-	</div>
-<% end %>
-
-<%= form_for([@goal, @goal.amounts.build]) do |f| %>
-	<h2>Is this correct?</h2>
-	<%= f.text_field :goal_amount %>
-	<%= @goal.test %>
-	of
-	<%= @goal.title %><br>
-	<h2>How many points is this goal worth?</h2>
-	<%= f.text_field :points %>
-
-	<h2>Would you like to add other incements for more points?</h2>
-	<%= f.submit %>
+<% @goal.amounts.each do |amount| %>
+	<p>
+		<strong><%= amount.points %> Points: </strong>
+		<%= amount.goal_amount %> of <%= @goal.title %>
+		<%= link_to 'Edit', edit_goal_path(@goal) %>
+	</p>
 <% end %>
 
 <%= link_to 'Back', welcome_index_path %>

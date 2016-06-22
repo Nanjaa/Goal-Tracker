@@ -6,6 +6,7 @@ class GoalsController < ApplicationController
 
 	def show
 		@goal = Goal.find(params[:id])
+		@amount = @goal.amounts.build
 	end
 
 	def new
@@ -14,14 +15,14 @@ class GoalsController < ApplicationController
 
 	def edit
 		@goal = Goal.find(params[:id])
-		@amount = @goal.amounts.build
+		@amount = @goal.amounts
 	end
 
 	def create
 		@goal = Goal.new(goal_params)
 
 		if @goal.save
-			redirect_to edit_goal_path(@goal)
+			redirect_to @goal
 		else
 			render 'new'
 		end
